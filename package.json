@@ -1,0 +1,23 @@
+{
+  "name": "backend-tutorial",
+  "version": "1.0.0",
+  "description": "this is backend tutorial or future looks and best practice",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuragbhatt408/backend-tut.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuragbhatt408/backend-tut/issues"
+  },
+  "homepage": "https://github.com/anuragbhatt408/backend-tut#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
