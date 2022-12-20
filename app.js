@@ -1,17 +1,13 @@
-const http = require("node:http");
+import express from "express";
+import routes from "./routes/index.js";
+import bodyParser from "body-parser";
 
-const PORT = 8000;
+const app = express();
+const PORT = 4000;
+app.use(bodyParser.json());
 
-// Create a local server to receive data from
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "application/json" });
-  res.end(
-    JSON.stringify({
-      data: "Hello World!",
-    })
-  );
+app.use(routes);
+
+app.listen(PORT, () => {
+  console.log(`server is listening on http://localhost:${PORT}`);
 });
-
-console.log(`server is running is at http://localhost:${PORT}`);
-
-server.listen(PORT);
