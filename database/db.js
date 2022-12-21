@@ -1,19 +1,25 @@
-import { MongoClient } from "mongodb";
-// or as an es module:
-// import { MongoClient } from 'mongodb'
+import mongoose from "mongoose";
 
-// Connection URL
-const url = "mongodb://localhost:27017";
-const client = new MongoClient(url);
+const connectDB = async () => {
+  await mongoose.connect("mongodb://localhost:27017/nodejs_backend_tut");
+};
 
-// Database Name
-const dbName = "nodejs_backend_tut";
+// import { MongoClient } from "mongodb";
+// // or as an es module:
+// // import { MongoClient } from 'mongodb'
 
-async function connect() {
-  await client.connect();
-  console.log("Connected successfully to db");
-  const db = await client.db(dbName);
-  return db;
-}
+// // Connection URL
+// const url = "mongodb://localhost:27017";
+// const client = new MongoClient(url);
 
-export default connect;
+// // Database Name
+// const dbName = "nodejs_backend_tut";
+
+// async function connect() {
+//   await client.connect();
+//   console.log("Connected successfully to db");
+//   const db = await client.db(dbName);
+//   return db;
+// }
+
+export default connectDB;
