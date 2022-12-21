@@ -6,12 +6,13 @@ import {
   store,
   update,
 } from "../controllers/BookControllers.js";
+import { auth } from "../middleware/auth.js";
 
 const BookRouter = Router();
 
-BookRouter.get("/", index);
+BookRouter.use(auth).get("/", index);
 
-BookRouter.post("/", store);
+BookRouter.use(auth).post("/", store);
 
 BookRouter.get("/:id", show);
 
